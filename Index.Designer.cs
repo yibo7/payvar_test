@@ -43,9 +43,9 @@
             this.菜单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.全局参数配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnCoolAddress = new System.Windows.Forms.Button();
-            this.txtAddrNum = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtAddrNum = new System.Windows.Forms.TextBox();
+            this.btnCoolAddress = new System.Windows.Forms.Button();
             this.txtAddrJson = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbInfo = new System.Windows.Forms.Label();
@@ -164,7 +164,7 @@
             this.菜单ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(975, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -173,13 +173,13 @@
             this.菜单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.全局参数配置ToolStripMenuItem});
             this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
-            this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
+            this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.菜单ToolStripMenuItem.Text = "菜单";
             // 
             // 全局参数配置ToolStripMenuItem
             // 
             this.全局参数配置ToolStripMenuItem.Name = "全局参数配置ToolStripMenuItem";
-            this.全局参数配置ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.全局参数配置ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.全局参数配置ToolStripMenuItem.Text = "全局参数配置";
             this.全局参数配置ToolStripMenuItem.Click += new System.EventHandler(this.全局参数配置ToolStripMenuItem_Click);
             // 
@@ -195,14 +195,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "获取充值地址";
             // 
-            // btnCoolAddress
+            // label3
             // 
-            this.btnCoolAddress.Location = new System.Drawing.Point(190, 32);
-            this.btnCoolAddress.Name = "btnCoolAddress";
-            this.btnCoolAddress.Size = new System.Drawing.Size(143, 30);
-            this.btnCoolAddress.TabIndex = 5;
-            this.btnCoolAddress.Text = "获取充值地址";
-            this.btnCoolAddress.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "获取数量";
             // 
             // txtAddrNum
             // 
@@ -212,14 +212,14 @@
             this.txtAddrNum.TabIndex = 5;
             this.txtAddrNum.Text = "3";
             // 
-            // label3
+            // btnCoolAddress
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "获取数量";
+            this.btnCoolAddress.Location = new System.Drawing.Point(190, 32);
+            this.btnCoolAddress.Name = "btnCoolAddress";
+            this.btnCoolAddress.Size = new System.Drawing.Size(143, 30);
+            this.btnCoolAddress.TabIndex = 5;
+            this.btnCoolAddress.Text = "获取充值地址";
+            this.btnCoolAddress.UseVisualStyleBackColor = true;
             // 
             // txtAddrJson
             // 
@@ -263,7 +263,7 @@
             this.Controls.Add(this.label1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Index";
-            this.Text = "测试工具V1.0";
+            this.Text = "PayVar测试工具V1.0";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
