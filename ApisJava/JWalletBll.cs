@@ -24,7 +24,7 @@ namespace WalletMiddleware.ApisJava
         /// <param name="coinType">币种名称</param>
         /// <param name="count">采集数量 10000</param>
         /// <returns></returns>
-        public List<ReciveCoolAddrVo> GetCoinCoolAddrs(string coinTypeName, int count)
+        public List<ReciveCoolAddrVo> GetCoinCoolAddrs(string coinTypeName, int count,out string temp)
         {
             //改用通过api方式，请求交易所热钱包数据。
             JApi iApi = new JApi();
@@ -45,8 +45,24 @@ namespace WalletMiddleware.ApisJava
             };
 
             var jsonData = JsonUtils.Serialize(objModel);
-
+            temp = "====API 采集冷地址 ====";
+            temp += "\t\r ";
+            temp += "地址: mcool/getaddrs";
+            temp += "\t\r ";
+            temp += "参数: userId="+ userId;
+            temp += "\t\r ";
+            temp += "coinTypeName=" + coinTypeName ;
+            temp += "\t\r ";
+            temp += "count=" + count ;
+            temp += "\t\r ";
+            temp += "mdWu=" + mdWu;
+            temp += "\t\r ";
             var (result, err) = iApi.PostData<List<ReciveCoolAddrVo>>(JUrlEnum.GatherAddrs, jsonData);
+            temp += "==== 结果 ====";
+
+            temp += "\t\r ";
+            temp += "result=" + JsonUtils.Serialize(result);
+            temp += "\t\r ";
             return result == null ? new List<ReciveCoolAddrVo>() : result;
 
 
@@ -78,6 +94,8 @@ namespace WalletMiddleware.ApisJava
             return result == null ? new List<ReciveHotWalletVo>() : result;
 
         }
+
+
         /// <summary>
         /// 上传 用户提现数据
         /// </summary>
@@ -86,13 +104,17 @@ namespace WalletMiddleware.ApisJava
         /// <param name="amountDecimal">金额</param>
         /// <param name="orderId">交易所ID</param>
         /// <returns>true 成功，false 失败 </returns>
-        public bool UploadWithdraw(string coinType, string toAddress, decimal amountDecimal, string orderId)
+        public bool UploadWithdraw(string coinType, string toAddress, decimal amountDecimal, string orderId, out string  temp)
         {
             //改用通过api方式，请求交易所热钱包数据。
             JApi iApi = new JApi();
             string userGid = Settings.Instance.WcfUserId;
             //使用有延值功能 Md5  (用户GID+币种名称+收币地址+金额【8位小数】+orderId+ 用户私钥 +延值) md5 1次
-            string mdwu = Md5Utils.ToMd5AndExtend($"{userGid}{coinType}{toAddress}{ amountDecimal.ToString("0.########")}{orderId}{Settings.Instance.PrivateKey}");
+            //string mdwu = Md5Utils.ToMd5AndExtend($"{userGid}{coinType}{toAddress}{ amountDecimal.ToString("0.########")}{orderId}{Settings.Instance.PrivateKey}");
+
+
+            //string mdwu = Md5Utils.ToMd5AndExtend($"{userGid}{coinType}{toAddress}{DecimalHelper. CutDecimalWithN( amountDecimal,8)}{orderId}{Settings.Instance.PrivateKey}");
+            string mdwu = Md5Utils.ToMd5AndExtend($"{userGid}{coinType}{toAddress}{DecimalHelper.CutDecimalWithN(amountDecimal, 8). ToString("0.########")}{orderId}{Settings.Instance.PrivateKey}");
 
             var objModel = new
             {
@@ -104,12 +126,28 @@ namespace WalletMiddleware.ApisJava
                 mdwu
 
             };
-
+            temp = "====API 提现申请 ====";
+            temp += "\t\r ";
+            temp += "地址: mwithdrawlist/uploadwithdraw";
+            temp += "\t\r ";
+            temp += "参数: coinType=" + coinType;
+            temp += "\t\r ";
+            temp += "toAddress=" + toAddress;
+            temp += "\t\r ";
+            temp += "amountDecimal=" + amountDecimal;
+            temp += "\t\r ";
+            temp += "userGid=" + userGid;
+            temp += "\t\r ";
+            temp += "orderId=" + orderId;
+            temp += "\t\r ";
+            temp += "mdWu=" + mdwu;
+            temp += "\t\r ";
 
             var jsonData = JsonUtils.Serialize(objModel);
 
             var (result, err) = iApi.PostData<string>(JUrlEnum.Uploadwithdraw, jsonData);
 
+           
             if (long.Parse(result) > 0)
             {
                 return true;

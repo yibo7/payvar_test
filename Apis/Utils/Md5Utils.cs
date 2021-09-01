@@ -60,5 +60,9 @@ namespace WalletMiddleware.Apis.Utils
         {
             return XS.Core.Md5Helper.MD5(str + mdwuKey);
         }
+
+
+
+
     }
 }

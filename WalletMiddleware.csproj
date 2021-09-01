@@ -121,6 +121,7 @@
     <Compile Include="Apis\Recharge.cs" />
     <Compile Include="Apis\UploadAddrs.cs" />
     <Compile Include="Apis\Utils\AesUtils.cs" />
+    <Compile Include="Apis\Utils\DecimalHelper.cs" />
     <Compile Include="Apis\Utils\JsonUtils.cs" />
     <Compile Include="Apis\Utils\Md5Utils.cs" />
     <Compile Include="Apis\Utils\WebUtils.cs" />

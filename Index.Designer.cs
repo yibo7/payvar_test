@@ -164,7 +164,7 @@
             this.菜单ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(975, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1042, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -173,13 +173,13 @@
             this.菜单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.全局参数配置ToolStripMenuItem});
             this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
-            this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.菜单ToolStripMenuItem.Text = "菜单";
             // 
             // 全局参数配置ToolStripMenuItem
             // 
             this.全局参数配置ToolStripMenuItem.Name = "全局参数配置ToolStripMenuItem";
-            this.全局参数配置ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
+            this.全局参数配置ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.全局参数配置ToolStripMenuItem.Text = "全局参数配置";
             this.全局参数配置ToolStripMenuItem.Click += new System.EventHandler(this.全局参数配置ToolStripMenuItem_Click);
             // 
@@ -220,13 +220,14 @@
             this.btnCoolAddress.TabIndex = 5;
             this.btnCoolAddress.Text = "获取充值地址";
             this.btnCoolAddress.UseVisualStyleBackColor = true;
+            this.btnCoolAddress.Click += new System.EventHandler(this.btnCoolAddress_Click);
             // 
             // txtAddrJson
             // 
             this.txtAddrJson.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddrJson.Location = new System.Drawing.Point(3, 21);
             this.txtAddrJson.Name = "txtAddrJson";
-            this.txtAddrJson.Size = new System.Drawing.Size(439, 348);
+            this.txtAddrJson.Size = new System.Drawing.Size(502, 348);
             this.txtAddrJson.TabIndex = 6;
             this.txtAddrJson.Text = "";
             // 
@@ -235,7 +236,7 @@
             this.groupBox3.Controls.Add(this.txtAddrJson);
             this.groupBox3.Location = new System.Drawing.Point(518, 88);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(445, 372);
+            this.groupBox3.Size = new System.Drawing.Size(508, 372);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "调用结果";
@@ -253,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 477);
+            this.ClientSize = new System.Drawing.Size(1042, 491);
             this.Controls.Add(this.lbInfo);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cbCoinList);
