@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{824A99F6-A8CB-429F-87AE-35E462B15432}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WalletMiddleware</RootNamespace>
+    <AssemblyName>WalletMiddleware</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>lib\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net">
+      <HintPath>lib\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>lib\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hotwallet_180607\hotwallet\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz, Version=3.0.0.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>lib\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>lib\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WalletContracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\WalletContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="XS.Core">
+      <HintPath>lib\XS.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="XS.DataProfile">
+      <HintPath>lib\XS.DataProfile.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiKeySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApiKeySetting.Designer.cs">
+      <DependentUpon>ApiKeySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApisJava\JApi.cs" />
+    <Compile Include="ApisJava\JUrlEnum.cs" />
+    <Compile Include="ApisJava\JWalletBll.cs" />
+    <Compile Include="ApisJava\vo\ReciveCoinsVo.cs" />
+    <Compile Include="ApisJava\vo\ReciveCoolAddrVo.cs" />
+    <Compile Include="ApisJava\vo\ReciveHotWalletVo.cs" />
+    <Compile Include="ApisJava\vo\ReciveRechangeVo.cs" />
+    <Compile Include="ApisJava\vo\ReciveWithdrawNewVo.cs" />
+    <Compile Include="ApisJava\vo\ReciveWithdrawVo.cs" />
+    <Compile Include="Apis\AddrPool.cs" />
+    <Compile Include="Apis\Base.cs" />
+    <Compile Include="Apis\Enums\UrlEnum.cs" />
+    <Compile Include="Apis\HotWallet.cs" />
+    <Compile Include="Apis\Models\ApiResponce.cs" />
+    <Compile Include="Apis\Models\HotWalletUpdateRequest.cs" />
+    <Compile Include="Apis\Models\InsertAddrCoin.cs" />
+    <Compile Include="Apis\Models\VirtualCoinType.cs" />
+    <Compile Include="Apis\Models\Withdraw.cs" />
+    <Compile Include="Apis\Recharge.cs" />
+    <Compile Include="Apis\UploadAddrs.cs" />
+    <Compile Include="Apis\Utils\AesUtils.cs" />
+    <Compile Include="Apis\Utils\DecimalHelper.cs" />
+    <Compile Include="Apis\Utils\JsonUtils.cs" />
+    <Compile Include="Apis\Utils\Md5Utils.cs" />
+    <Compile Include="Apis\Utils\WebUtils.cs" />
+    <Compile Include="Apis\VirtualCoinType.cs" />
+    <Compile Include="Apis\WalletAddreCore.cs" />
+    <Compile Include="Apis\Withdraw.cs" />
+    <Compile Include="AppStaticData.cs" />
+    <Compile Include="CheckData\BtcDataInfo.cs" />
+    <Compile Include="CheckData\CheckCoinTxState.cs" />
+    <Compile Include="CheckData\JsonHelper.cs" />
+    <Compile Include="Encryption\AesEncrypt.cs" />
+    <Compile Include="Encryption\Hmacsha256.cs" />
+    <Compile Include="Encryption\RSAFromPkcs8.cs" />
+    <Compile Include="Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index.Designer.cs">
+      <DependentUpon>Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableModels\--amountsnapshot.cs" />
+    <Compile Include="TableModels\--MainReport.cs" />
+    <Compile Include="TableModels\ApplicationLock.cs" />
+    <Compile Include="TableModels\SendMsgs.cs" />
+    <Compile Include="TableModels\HotWallet.cs" />
+    <Compile Include="TableModels\--JobReports.cs" />
+    <Compile Include="TableModels\Recharge.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="TableModels\pooladdr.cs" />
+    <Compile Include="TableModels\--TransactionReport.cs" />
+    <Compile Include="TableModels\--virtualcaptualoperation.cs" />
+    <Compile Include="TableModels\--virtualcointype.cs" />
+    <Compile Include="TableModels\walletaddrecore.cs" />
+    <Compile Include="TableModels\WithdrawList.cs" />
+    <EmbeddedResource Include="ApiKeySetting.resx">
+      <DependentUpon>ApiKeySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index.resx">
+      <DependentUpon>Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="conf\conf.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="conf\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ServiceModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1 %281%29.png" />
+    <Content Include="Resources\1.png" />
+    <Content Include="Resources\20130531023444596_easyicon_net_118.png" />
+    <Content Include="Resources\20140411063433672_easyicon_net_32.png" />
+    <Content Include="Resources\20140411063534306_easyicon_net_32.png" />
+    <Content Include="Resources\32 %281%29.png" />
+    <Content Include="Resources\32 %282%29.png" />
+    <Content Include="Resources\4.png" />
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\Image1.png" />
+    <Content Include="Resources\word.png" />
+    <Content Include="Resources\启动图片.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
